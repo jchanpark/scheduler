@@ -1,5 +1,10 @@
 # Interview Scheduler
 
+
+## Final Product
+
+!["Select Day"](https://github.com/jchanpark/scheduler/blob/master/docs/Select-day.png?raw=true)
+
 ## Setup
 
 Install dependencies with `npm install`.
