@@ -36,14 +36,14 @@ export default function Appointment(props) {
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
-  }
+  };
 
   function destroy() {
     transition(DELETING);
     props.cancelInterview(props.id, props.interview)
       .then(() => transition(EMPTY))
       .catch(error => transition(ERROR_DELETE, true));
-  }
+  };
 
   return (
     <article className="appointment">
@@ -75,4 +75,4 @@ export default function Appointment(props) {
 
     </article>    
   )
-}
+};
