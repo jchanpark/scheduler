@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function useApplicationData() {
 
-  const updateSpots = function(state, appointments) { 
+  const updateSpots = function (state, appointments) {
     // find the day
     const dayObj = state.days.find(d => d.name === state.day);
 
@@ -18,7 +18,7 @@ export default function useApplicationData() {
     const day = { ...dayObj, spots };
     const days = state.days.map(d => {
 
-      if(d.name === state.day) {
+      if (d.name === state.day) {
         return day;
       }
       return d;
@@ -37,7 +37,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
 
-  function bookInterview(id, interview) { 
+  function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -45,17 +45,17 @@ export default function useApplicationData() {
     const appointments = {
       ...state.appointments,
       [id]: appointment
-    }   
+    }
 
     return axios.put(`/api/appointments/${id}`, { interview })
-      .then(res => {        
+      .then(res => {
         const days = updateSpots(state, appointments) // declare days with new available spot value to set state
         const newState = {
           ...state,
           appointments, days
         }
-        setState( newState ); // after database updated set new state
-      })      
+        setState(newState); // after database updated set new state
+      })
   }
 
   function cancelInterview(id) {
@@ -76,7 +76,7 @@ export default function useApplicationData() {
           ...state, days,
           appointments: newAppointments
         }
-        setState( newState ); // after database updated set new state
+        setState(newState); // after database updated set new state
       })
   }
 
@@ -84,9 +84,9 @@ export default function useApplicationData() {
     Promise.all([
       axios.get('/api/days'),
       axios.get('/api/appointments'),
-      axios.get('/api/interviewers')      
+      axios.get('/api/interviewers')
     ]).then((all) => {
-      setState(prev =>  ({...prev, days:all[0].data, appointments: all[1].data, interviewers: all[2].data}));
+      setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []);
 
