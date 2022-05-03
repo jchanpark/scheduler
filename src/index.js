@@ -1,3 +1,4 @@
+console.log
 import React from "react";
 import ReactDOM from "react-dom";
 
