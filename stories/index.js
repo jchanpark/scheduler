@@ -40,7 +40,7 @@ storiesOf("DayListItem", module)
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
   })
   .add("Unselected", () => <DayListItem name="Monday" spots={5} />)
-  .add("Selected", () => <DayListItem name="Monday" spots={5} selected />) 
+  .add("Selected", () => <DayListItem name="Monday" spots={5} selected />)
   .add("Full", () => <DayListItem name="Monday" spots={0} />)
   .add("Clickable", () => (
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} />
@@ -63,7 +63,7 @@ const days = [
     spots: 0,
   },
 ];
-  
+
 storiesOf("DayList", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
@@ -84,7 +84,7 @@ const interviewer = {
   name: "Sylvia Palmer",
   avatar: "https://i.imgur.com/LpaY82x.png"
 };
-  
+
 storiesOf("InterviewerListItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -110,7 +110,7 @@ storiesOf("InterviewerListItem", module)
       avatar={interviewer.avatar}
       setInterviewer={() => action("setInterviewer")(interviewer.id)}
     />
-  ));  
+  ));
 
 const interviewers = [
   { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
@@ -119,7 +119,7 @@ const interviewers = [
   { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
   { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
 ];
-  
+
 storiesOf("InterviewerList", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -161,8 +161,8 @@ storiesOf("Appointment", module)
   .add("Status", () => <Status />)
 
   .add("Error", () => <Error onClose={action("onClose")} />)
-  
-  .add("Create", () => <Form interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")}/>)
+
+  .add("Create", () => <Form interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")} />)
 
   .add("Edit", () => <Form student="Jay Park" interviewer={2} interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")} />)
 
@@ -178,7 +178,7 @@ storiesOf("Appointment", module)
       <Appointment
         id={1}
         time='4pm'
-        interview={{student: "Lydia Miller-Jones", interviewer}}
+        interview={{ student: "Lydia Miller-Jones", interviewer }}
       />
       <Appointment time='5pm' />
     </Fragment>
