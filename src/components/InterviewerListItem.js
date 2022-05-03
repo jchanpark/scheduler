@@ -2,12 +2,12 @@ import React from "react";
 import classNames from "classnames";
 import "./InterviewerListItem.scss";
 
-export default function InterviewerListItem (props) {
+export default function InterviewerListItem(props) {
 
   const conditionalClasses = classNames("interviewers__item", {
     "interviewers__item--selected": props.selected
   });
-  
+
   return (
     <li className={conditionalClasses} onClick={props.setInterviewer}>
       <img
