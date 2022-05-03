@@ -3,11 +3,11 @@
 
 ## Final Product
 
-!["Select Day"](https://github.com/jchanpark/scheduler/blob/master/docs/Select-day.png?raw=true)
+!["Select Day"](https://github.com/jchanpark/scheduler/blob/master/docs/Select_day.png?raw=true)
 
-!["Create Appointment](https://github.com/jchanpark/scheduler/blob/master/docs/Create-appointment.png?raw=true)
+!["Create Appointment](https://github.com/jchanpark/scheduler/blob/master/docs/Create_appointment.png?raw=true)
 
-!["Delete-Confirmation"](https://github.com/jchanpark/scheduler/blob/master/docs/Delete-confirmation.png?raw=true)
+!["Delete-Confirmation"](https://github.com/jchanpark/scheduler/blob/master/docs/Delete_confirmation.png?raw=true)
 
 ## Setup
 
