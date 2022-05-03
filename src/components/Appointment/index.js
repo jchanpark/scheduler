@@ -20,31 +20,31 @@ const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
 export default function Appointment(props) {
-  const { mode, transition, back } = useVisualMode(
-    props.interview ? SHOW : EMPTY
+  const { mode, transition, back } = useVisualMode( // to determine initial mode of an appointments depending on interview value
+    props.interview ? SHOW : EMPTY  // 
   );
 
-  function save(name, interviewer) {
+  function save(name, interviewer) { // to save an appointment with a student name and a interviewer name
     const interview = {
       student: name,
       interviewer
     };
 
-    transition(SAVING);
+    transition(SAVING); // to set mode and history
     props
-      .bookInterview(props.id, interview)
+      .bookInterview(props.id, interview) // to update database
       .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE, true));
+      .catch(() => transition(ERROR_SAVE, true)); // to catch error, not being able to save an appointment
   };
 
-  function destroy() {
+  function destroy() { // to cancel an appointment
     transition(DELETING);
     props.cancelInterview(props.id, props.interview)
       .then(() => transition(EMPTY))
-      .catch(() => transition(ERROR_DELETE, true));
+      .catch(() => transition(ERROR_DELETE, true)); // to catch error, not being able to delete an appointment
   };
 
-  return (
+  return ( // different modes at appointments
     <article className="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
