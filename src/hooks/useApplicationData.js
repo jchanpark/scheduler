@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function useApplicationData() {
 
-  const updateSpots = function(state, appointments, id) {
+  const updateSpots = function(state, appointments) { 
     // find the day
     const dayObj = state.days.find(d => d.name === state.day);
 
@@ -37,8 +37,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
 
-  function bookInterview(id, interview) {
-    // console.log(id, interview);
+  function bookInterview(id, interview) { 
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -49,12 +48,13 @@ export default function useApplicationData() {
     }   
 
     return axios.put(`/api/appointments/${id}`, { interview })
-      .then(res => {
+      .then(res => {        
+        const days = updateSpots(state, appointments) // declare days with new available spot value to set state
         const newState = {
           ...state,
-          appointments
+          appointments, days
         }
-        setState( newState );
+        setState( newState ); // after database updated set new state
       })      
   }
 
@@ -71,15 +71,12 @@ export default function useApplicationData() {
 
     return axios.delete(`/api/appointments/${id}`)
       .then(res => {
-        // This is the old way
-        // const newState = state
-        // newState.appointments = newAppointments
-        // This is the new way to create a new object
+        const days = updateSpots(state, newAppointments) // declare days with new available spot value to set state
         const newState = {
-          ...state,
+          ...state, days,
           appointments: newAppointments
         }
-        setState( newState );
+        setState( newState ); // after database updated set new state
       })
   }
 
