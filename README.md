@@ -5,11 +5,15 @@
 
 !["Demo Video"](https://github.com/jchanpark/scheduler/blob/master/docs/Scheduler_demo.gif?raw=true)
 
+<!--
+
 !["Select Day"](https://github.com/jchanpark/scheduler/blob/master/docs/Select_day.png?raw=true)
 
 !["Create Appointment](https://github.com/jchanpark/scheduler/blob/master/docs/Create_appointment.png?raw=true)
 
 !["Delete-Confirmation"](https://github.com/jchanpark/scheduler/blob/master/docs/Delete_confirmation.png?raw=true)
+
+-->
 
 ## Setup
 
