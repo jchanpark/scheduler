@@ -3,7 +3,7 @@
 
 ## Final Product
 
-!["Demo Video"](https://github.com/jchanpark/scheduler/blob/master/docs/Scheduler_demo.mov?raw=true)
+!["Demo Video"](https://github.com/jchanpark/scheduler/blob/master/docs/Scheduler_demo.gif?raw=true)
 
 !["Select Day"](https://github.com/jchanpark/scheduler/blob/master/docs/Select_day.png?raw=true)
 
