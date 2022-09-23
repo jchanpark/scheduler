@@ -5,20 +5,20 @@ export default function useApplicationData() {
 
   const updateSpots = function (state, appointments) {
     // find the day
-    const dayObj = state.days.find(d => d.name === state.day);
+    const dayObj = state.days.find(d => d.name === state.day); // to find the selcted day in old state
 
     // look at the appointment id's (array)
     let spots = 0;
     for (const id of dayObj.appointments) {
       const appointment = appointments[id];
-      if (!appointment.interview) {
+      if (!appointment.interview) { // if specific appointment has null to its interview spots counts one
         spots++;
       }
     }
-    const day = { ...dayObj, spots };
+    const day = { ...dayObj, spots }; // day with updated spots
     const days = state.days.map(d => {
 
-      if (d.name === state.day) {
+      if (d.name === state.day) { // to find day with updated spots in old state
         return day;
       }
       return d;

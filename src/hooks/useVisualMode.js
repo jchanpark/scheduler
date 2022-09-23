@@ -20,7 +20,7 @@ export default function useVisualMode(initial) {
       history.pop();
       setHistory([...history]);
       setMode(history[history.length - 1]);
-    }
+    } 
   }
 
   return { mode, transition, back, history };
