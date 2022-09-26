@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+Interview Scheduler is a web application that students can book and modify interviews/meetings with a mentor. The app is built using react and tested using Storybook, Jest and Cypress.
+
 
 ## Final Product
 
